@@ -1,7 +1,7 @@
 #![no_std]
 #![no_main]
 #![feature(custom_test_frameworks)]
-#![test_runner(ekos::test_runner)]
+#![test_runner(blog_os::test_runner)]
 #![reexport_test_harness_main = "test_main"]
 
 use ekos::println;
@@ -9,23 +9,16 @@ use core::panic::PanicInfo;
 
 #[no_mangle]
 pub extern "C" fn _start() -> ! {
-    let version = "0.4.0";
+    let version = "0.5.0";
     println!("ekos {}", version);
 
     ekos::init();
-
-    fn stack_overflow() {
-        stack_overflow(); // for each recursion, the return address is pushed
-    }
-
-    // uncomment line below to trigger a stack overflow
-    // stack_overflow();
 
     #[cfg(test)]
     test_main();
 
     println!("It did not crash!");
-    loop {}
+    ekos::hlt_loop();
 }
 
 /// This function is called on panic.
