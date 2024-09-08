@@ -1,7 +1,7 @@
 #![no_std]
 #![no_main]
 #![feature(custom_test_frameworks)]
-#![test_runner(blog_os::test_runner)]
+#![test_runner(ekos::test_runner)]
 #![reexport_test_harness_main = "test_main"]
 
 use ekos::println;
@@ -19,6 +19,11 @@ pub extern "C" fn _start() -> ! {
 
     println!("It did not crash!");
     ekos::hlt_loop();
+
+    /* loop {
+        use ekos::print;
+        print!("-");
+    } */
 }
 
 /// This function is called on panic.
