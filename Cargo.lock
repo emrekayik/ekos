@@ -28,7 +28,7 @@ checksum = "365861702868e2a37b4247aaecc7bd8f4389baec8d025497ad8ba7ff37ee9440"
 
 [[package]]
 name = "ekos"
-version = "0.5.0"
+version = "0.6.0"
 dependencies = [
  "bootloader",
  "lazy_static",

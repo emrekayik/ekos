@@ -10,7 +10,7 @@ use core::panic::PanicInfo;
 #[no_mangle]
 pub extern "C" fn _start() -> ! {
     use x86_64::registers::control::Cr3;
-    let version = "0.5.0";
+    let version = "0.6.0";
     println!("ekos {}", version);
 
     let (level_4_page_table, _) = Cr3::read();
