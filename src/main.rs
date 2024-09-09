@@ -1,9 +1,8 @@
 #![no_std]
 #![no_main]
 #![feature(custom_test_frameworks)]
-#![test_runner(ekos::test_runner)]
+#![test_runner(blog_os::test_runner)]
 #![reexport_test_harness_main = "test_main"]
-
 
 extern crate alloc;
 
@@ -17,11 +16,10 @@ entry_point!(kernel_main);
 fn kernel_main(boot_info: &'static BootInfo) -> ! {
     use ekos::allocator;
     use ekos::memory::{self, BootInfoFrameAllocator};
-    use x86_64::{structures::paging::Page, VirtAddr};
+    use x86_64::VirtAddr;
 
-    let version = "0.6.0";
+    let version = "0.8.0";
     println!("ekos {}", version);
-
     ekos::init();
 
     let phys_mem_offset = VirtAddr::new(boot_info.physical_memory_offset);
@@ -59,13 +57,7 @@ fn kernel_main(boot_info: &'static BootInfo) -> ! {
 
     println!("It did not crash!");
     ekos::hlt_loop();
-
-    /* loop {
-        use ekos::print;
-        print!("-");
-    } */
 }
-
 
 /// This function is called on panic.
 #[cfg(not(test))]
