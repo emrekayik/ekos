@@ -64,7 +64,7 @@ checksum = "22ec99545bb0ed0ea7bb9b8e1e9122ea386ff8a48c0922e43f36d45ab09e0e80"
 
 [[package]]
 name = "ekos"
-version = "0.9.0"
+version = "0.9.1"
 dependencies = [
  "bootloader",
  "conquer-once",

@@ -2,7 +2,7 @@
 
 `ekos` is a small operating system kernel written in Rust. This project is a learning exercise to understand low-level programming concepts, operating system design, and the Rust programming language.
 
-Referense: [https://os.phil-opp.com/](https://os.phil-opp.com/)
+Reference: [https://os.phil-opp.com/](https://os.phil-opp.com/)
 
 ## Features
 
@@ -23,7 +23,6 @@ Referense: [https://os.phil-opp.com/](https://os.phil-opp.com/)
 To build and run `ekos`, you need to have the following tools installed:
 
 - [Rust](https://www.rust-lang.org/tools/install)
-- [cargo-xbuild](https://github.com/rust-osdev/cargo-xbuild)
 - [bootimage](https://github.com/rust-osdev/bootimage)
 
 ### Building
@@ -39,14 +38,13 @@ To build and run `ekos`, you need to have the following tools installed:
 
    ```sh
    rustup component add rust-src
-   cargo install cargo-xbuild
    cargo install bootimage
    ```
 
 3. Build the project:
 
    ```sh
-   cargo xbuild
+   cargo build
    ```
 
 4. Create a bootable disk image:
