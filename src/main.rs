@@ -7,9 +7,11 @@
 extern crate alloc;
 
 use alloc::{boxed::Box, rc::Rc, vec, vec::Vec};
-use ekos::println;
+//use ekos::println;
 use bootloader::{entry_point, BootInfo};
 use core::panic::PanicInfo;
+
+mod vga_buffer;
 
 entry_point!(kernel_main);
 
