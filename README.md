@@ -12,6 +12,10 @@ Referense: [https://os.phil-opp.com/](https://os.phil-opp.com/)
 - Keyboard input handling
 - Panic handling
 
+## Screenshot
+
+![ekos Screenshot](./screenshot.png)
+
 ## Getting Started
 
 ### Prerequisites

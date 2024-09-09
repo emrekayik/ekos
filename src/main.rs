@@ -57,7 +57,8 @@ fn kernel_main(boot_info: &'static BootInfo) -> ! {
     test_main();
 
     println!("It did not crash!");
-    ekos::hlt_loop();
+    loop {}
+    //ekos::hlt_loop();
 }
 
 /// This function is called on panic.
