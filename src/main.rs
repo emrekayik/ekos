@@ -7,6 +7,7 @@
 extern crate alloc;
 
 use alloc::{boxed::Box, rc::Rc, vec, vec::Vec};
+use ekos::task::{executor::Executor, keyboard, Task};
 use ekos::println;
 use bootloader::{entry_point, BootInfo};
 use core::panic::PanicInfo;
@@ -18,7 +19,7 @@ fn kernel_main(boot_info: &'static BootInfo) -> ! {
     use ekos::memory::{self, BootInfoFrameAllocator};
     use x86_64::VirtAddr;
 
-    let version = "0.8.0";
+    let version = "0.9.0";
     println!("ekos {}", version);
     ekos::init();
 
